@@ -1,7 +1,7 @@
 <?php
 class Users{
     public function __construct(
-        private array $username,
+        private array $nicksName,
         private array $password,
         private array $mail
     ){}
@@ -11,7 +11,7 @@ class Users{
          */ 
         public function getUsername()
         {
-                return $this->username;
+                return $this->nicksName;
         }
 
         /**
@@ -21,7 +21,7 @@ class Users{
          */ 
         public function setUsername($username)
         {
-                $this->username = $username;
+                $this->nicksName = $username;
 
                 return $this;
         }
@@ -66,7 +66,7 @@ class Users{
                 return $this;
         }
     public function addUser($newUser, $newPass, $newMail){
-        $users = $this -> username; 
+        $users = $this -> nicksName; 
         for ($i=0; $i < count($users); $i++) { 
             if ($newUser == $users[$i]){
                 return "El usuario ya existe";
