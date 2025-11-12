@@ -4,40 +4,161 @@ class Users{
         private array $names,
         private array $surnames,
         private array $dnis,
-        private array $carnetss,
+        private array $carnets,
         private array $nicksName,
         private array $password,
         private array $emails
     ){}
 
-       
-    public function addUser($newUser, $newPass, $newMail){
-        $users = $this -> nicksName; 
-        for ($i=0; $i < count($users); $i++) { 
-            if ($newUser == $users[$i]){
-                return "El usuario ya existe";
-            } else {
-                $users.array_push($newUser);
-            }
+        /**
+         * Get the value of names
+         */ 
+        public function getNames()
+        {
+                return $this->names;
         }
 
-        $pass = $this -> password;
-        for ($i=0; $i < count($pass); $i++) { 
-            if ($newPass == $pass[$i]){
-                return "La contraseña ya existe";
-            } else {
-                $pass.array_push($newPass);
-            }
+        /**
+         * Set the value of names
+         *
+         * @return  self
+         */ 
+        public function setNames($names)
+        {
+                $this->names = $names;
+
+                return $this;
         }
 
-        $mails = $this -> mail;
-        for ($i=0; $i < count($mails); $i++) { 
-            if ($newMail == $mails[$i]){
-                return "El correo ya esta registrado";
-            } else {
-                $mails.array_push($newMail);
-            }
+        /**
+         * Get the value of surnames
+         */ 
+        public function getSurnames()
+        {
+                return $this->surnames;
         }
+
+        /**
+         * Set the value of surnames
+         *
+         * @return  self
+         */ 
+        public function setSurnames($surnames)
+        {
+                $this->surnames = $surnames;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of dnis
+         */ 
+        public function getDnis()
+        {
+                return $this->dnis;
+        }
+
+        /**
+         * Set the value of dnis
+         *
+         * @return  self
+         */ 
+        public function setDnis($dnis)
+        {
+                $this->dnis = $dnis;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of carnets
+         */ 
+        public function getCarnets()
+        {
+                return $this->carnets;
+        }
+
+        /**
+         * Set the value of carnets
+         *
+         * @return  self
+         */ 
+        public function setCarnets($carnets)
+        {
+                $this->carnets = $carnets;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of nicksName
+         */ 
+        public function getNicksName()
+        {
+                return $this->nicksName;
+        }
+
+        /**
+         * Set the value of nicksName
+         *
+         * @return  self
+         */ 
+        public function setNicksName($nicksName)
+        {
+                $this->nicksName = $nicksName;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of password
+         */ 
+        public function getPassword()
+        {
+                return $this->password;
+        }
+
+        /**
+         * Set the value of password
+         *
+         * @return  self
+         */ 
+        public function setPassword($password)
+        {
+                $this->password = $password;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of emails
+         */ 
+        public function getEmails()
+        {
+                return $this->emails;
+        }
+
+        /**
+         * Set the value of emails
+         *
+         * @return  self
+         */ 
+        public function setEmails($emails)
+        {
+                $this->emails = $emails;
+
+                return $this;
+        }
+
+    public function addUser($newNickName, $newPass, $newEmail, $newName, $newSurname, $newDni, $newCarnet){
+        array_push($this->nicksName, $newNickName);
+        array_push($this->password, $newPass);
+        array_push($this->emails, $newEmail);
+        array_push($this->names, $newName);
+        array_push($this->surnames, $newSurname);
+        array_push($this->dnis, $newDni);
+        array_push($this->carnets, $newCarnet);
+        
     }
 }
 

@@ -1,77 +1,156 @@
 <?php
 
-class Register extends Users{
+class Register{
     public function __construct(
-        $mail, 
-        $username,
-        $password,
-        private string $mailUser,
-        private string $nickName,
-        private string $passWord,
+        private string $name,
+        private string $surname,
+        private string $dni,
+        private bool $carnet,
+        private string $nicksName,
+        private string $password,
+        private string $email
     ){}
 
-    
         /**
-         * Get the value of mail
+         * Get the value of name
          */ 
-        public function getMail()
+        public function getName()
         {
-                return $this->mailUser;
+                return $this->name;
         }
 
         /**
-         * Set the value of mail
+         * Set the value of name
          *
          * @return  self
          */ 
-        public function setMail($mailUser)
+        public function setName($name)
         {
-                $this->mailUser = $mailUser;
+                $this->name = $name;
 
                 return $this;
         }
 
         /**
-         * Get the value of nickName
+         * Get the value of surname
          */ 
-        public function getNickName()
+        public function getSurname()
         {
-                return $this->nickName;
+                return $this->surname;
         }
 
         /**
-         * Set the value of nickName
+         * Set the value of surname
          *
          * @return  self
          */ 
-        public function setNickName($nickName)
+        public function setSurname($surname)
         {
-                $this->nickName = $nickName;
+                $this->surname = $surname;
 
                 return $this;
         }
 
         /**
-         * Get the value of passWord
+         * Get the value of dni
          */ 
-        public function getPassWord()
+        public function getDni()
         {
-                return $this->passWord;
+                return $this->dni;
         }
 
         /**
-         * Set the value of passWord
+         * Set the value of dni
          *
          * @return  self
          */ 
-        public function setPassWord($passWord)
+        public function setDni($dni)
         {
-                $this->passWord = $passWord;
+                $this->dni = $dni;
 
                 return $this;
         }
-    
-    public function addUser($newUser, $newPass, $newMail){
+
+        /**
+         * Get the value of carnet
+         */ 
+        public function getCarnet()
+        {
+                return $this->carnet;
+        }
+
+        /**
+         * Set the value of carnet
+         *
+         * @return  self
+         */ 
+        public function setCarnet($carnet)
+        {
+                $this->carnet = $carnet;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of nicksName
+         */ 
+        public function getNicksName()
+        {
+                return $this->nicksName;
+        }
+
+        /**
+         * Set the value of nicksName
+         *
+         * @return  self
+         */ 
+        public function setNicksName($nicksName)
+        {
+                $this->nicksName = $nicksName;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of password
+         */ 
+        public function getPassword()
+        {
+                return $this->password;
+        }
+
+        /**
+         * Set the value of password
+         *
+         * @return  self
+         */ 
+        public function setPassword($password)
+        {
+                $this->password = $password;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of email
+         */ 
+        public function getEmail()
+        {
+                return $this->email;
+        }
+
+        /**
+         * Set the value of email
+         *
+         * @return  self
+         */ 
+        public function setEmail($email)
+        {
+                $this->email = $email;
+
+                return $this;
+        }
+
+
         
-    }
 }
