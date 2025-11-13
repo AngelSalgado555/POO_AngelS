@@ -157,8 +157,7 @@ class Users{
         array_push($this->names, $newName);
         array_push($this->surnames, $newSurname);
         array_push($this->dnis, $newDni);
-        array_push($this->carnets, $newCarnet);
-        
+        array_push($this->carnets, $newCarnet); 
     }
 }
 
