@@ -25,6 +25,7 @@
             include_once $_SERVER['DOCUMENT_ROOT'] . "POO_AngelS/app/models/Users.php";
             $user1 = new Register("Angel Gabriel", "Salgado Licona", 55555, true, "Slayer55", "Angelsalgado2024", "angelsalgadolicona4444@gmail.com");
 
+            $user1 -> registerUser();
             $login = new Login();
             $login->login("Slayer55", "Angelsalgado2024");            
         ?> 
