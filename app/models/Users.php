@@ -1,13 +1,13 @@
 <?php
-class Users{
+abstract class Users{
     public function __construct(
-        private array $names,
-        private array $surnames,
-        private array $dnis,
-        private array $carnets,
-        private array $nicksName,
-        private array $password,
-        private array $emails
+        protected array $names,
+        protected array $surnames,
+        protected array $dnis,
+        protected array $carnets,
+        protected array $nicksName,
+        protected array $password,
+        protected array $emails
     ){}
 
         /**
