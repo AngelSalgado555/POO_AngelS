@@ -134,7 +134,8 @@ class Coche{
         }
 
         public function showCard(){
-                $ret = "Nombre: " . $this-> name . " Tipo de Conducción: " . $this -> typeDrive . " Combustible: " . $this -> fuel . " ID: " . $this -> id . " Disponible: " . $this -> available . " Imagen: " . $this -> image;
+                $ret = "Nombre: " . $this-> name . " Tipo de Conducción: " . $this -> typeDrive . " Combustible: " . 
+                $this -> fuel . " ID: " . $this -> id . " Disponible: " . $this -> available . " Imagen: " . $this -> image;
 
                 return $ret;
         }

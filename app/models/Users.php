@@ -10,21 +10,26 @@ abstract class Users{
         protected string $email
     ){}
 
+
+        public function __tostring(){
+                $ret = "<b>Nombre:</b> " . $this -> name . " <br><b>Apellido:</b> " . $this -> surname . "<br><b>DNI:</b> " . $this -> dni . "<br><b>Carnet:</b> ";
+                if (!$this -> carnet){
+                        $ret .= "No tiene ";
+                } else {
+                        $ret .= "Si tiene ";
+                }
+                $ret .= "<br><b>NickName:</b> " . $this -> nickName . "<br><b>PassWord:</b> " . $this -> password . "<br><b>Email:</b> " . $this -> email;
+
+                return $ret;
+        }
+
         /**
          * Get the value of name
          */ 
         public function getName()
         {
                 return $this->name;
-        }    public static function verifyLogin(string $nickOrEmail, string $password): bool {
-        foreach (self::$users as $user) {
-            if (($user->getNickName() === $nickOrEmail || $user->getEmail() === $nickOrEmail)
-                && $user->getPassword() === $password) {
-                return true;
-            }
         }
-        return false;
-    }
 
         /**
          * Set the value of name
@@ -47,9 +52,6 @@ abstract class Users{
         }
 
         /**
-
-        /**
-    
          * Set the value of surname
          *
          * @return  self
@@ -101,9 +103,6 @@ abstract class Users{
                 return $this;
         }
 
-
-        /**
-    
         /**
          * Get the value of nickName
          */ 
@@ -162,18 +161,6 @@ abstract class Users{
                 $this->email = $email;
 
                 return $this;
-        }
-
-        public function __tostring(){
-                $ret = "Nombre: " . $this -> name . " Apellido: " . $this -> surname . " DNI: " . $this -> dni . " Carnet: ";
-                if (!$this -> carnet){
-                        $ret .= "No tiene ";
-                } else {
-                        $ret .= "Si tiene ";
-                }
-                $ret .= " NickName: " . $this -> nickName . " PassWord: " . $this -> password . " Email: " . $this -> email;
-
-                return $ret;
         }
 }
 

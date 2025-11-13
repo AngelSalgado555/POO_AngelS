@@ -7,10 +7,5 @@ class Login extends Users{
 
         public function login($nickOrEmail, $password){
                 return Database::verifyLogin($nickOrEmail, $password);
-                if (!this){
-                        echo "Inicio de sesión exitoso";
-                } else {
-                        echo "No se pudo iniciar sesión";
-                }
         }
 }

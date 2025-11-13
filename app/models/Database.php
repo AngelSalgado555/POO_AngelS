@@ -6,10 +6,13 @@ class Database {
         self::$users[] = $user;
     }
 
+    public static function getUsers(): array {
+        return self::$users;
+    }
 
-    public static function findUserByNick(string $nick): ?Users {
+    public static function findUserByNickname($nickName): Users | null {
         foreach (self::$users as $user) {
-            if ($user->getNickName() === $nick) {
+            if ($user->getNickName() === $nickName) {
                 return $user;
             }
         }
@@ -17,7 +20,7 @@ class Database {
     }
 
 
-    public static function findUserByEmail(string $email): ?Users {
+    public static function findUserByEmail($email): Users | null {
         foreach (self::$users as $user) {
             if ($user->getEmail() === $email) {
                 return $user;
@@ -26,13 +29,15 @@ class Database {
         return null;
     }
 
-    public static function verifyLogin(string $nickOrEmail, string $password): bool {
+    public static function verifyLogin($nickOrEmail, $password): bool {
         foreach (self::$users as $user) {
             if (($user->getNickName() === $nickOrEmail || $user->getEmail() === $nickOrEmail)
                 && $user->getPassword() === $password) {
+                echo "Inicio de sesión exitoso";
                 return true;
             }
         }
+        echo "No se pudo iniciar sesión";
         return false;
     }
 
