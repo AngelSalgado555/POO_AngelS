@@ -16,7 +16,15 @@ abstract class Users{
         public function getName()
         {
                 return $this->name;
+        }    public static function verifyLogin(string $nickOrEmail, string $password): bool {
+        foreach (self::$users as $user) {
+            if (($user->getNickName() === $nickOrEmail || $user->getEmail() === $nickOrEmail)
+                && $user->getPassword() === $password) {
+                return true;
+            }
         }
+        return false;
+    }
 
         /**
          * Set the value of name
@@ -39,6 +47,9 @@ abstract class Users{
         }
 
         /**
+
+        /**
+    
          * Set the value of surname
          *
          * @return  self
@@ -90,6 +101,9 @@ abstract class Users{
                 return $this;
         }
 
+
+        /**
+    
         /**
          * Get the value of nickName
          */ 

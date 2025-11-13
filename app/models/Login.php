@@ -1,40 +1,16 @@
 <?php
 
-
 class Login extends Users{
-        public function __construct(
-        $nicksName, 
-        $password, 
-        $emails,
-        private string $nickName,
-        private string $pass){
-                parent::__construct($nicksName, $password, $emails);
+        public function __construct(string $name = "", string $surname = "", int $dni = 0, bool $carnet = false, string $nickName = "", string $password = "", string $email = ""){
+                parent::__construct($name, $surname, $dni, $carnet, $nickName, $password, $email);
         }
 
-
-        public function login($nickName, $pass){
-                for ($i=0; $i < count($this -> nicksName); $i++) { 
-                        if ($this -> nicksName[$i] == $nickName){
-                                continue;
-                        }
+        public function login($nickOrEmail, $password){
+                return Database::verifyLogin($nickOrEmail, $password);
+                if (!this){
+                        echo "Inicio de sesión exitoso";
+                } else {
+                        echo "No se pudo iniciar sesión";
                 }
-
-                for ($i=0; $i < count($this -> password); $i++) { 
-                        if ($this -> password[$i] == $pass){
-                                continue;
-                        }
-                }
-
-                echo "Login success!";
         }
-
-        public function logout(){
-                $this -> nickName == null;
-                $this -> pass == null;
-
-                echo "Logout success!";
-        }
-
-        //Planeo hacer un metodo de recuperación de contraseña, pero aun no se como implementarla
-
 }
