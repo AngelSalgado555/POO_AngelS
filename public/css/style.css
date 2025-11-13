@@ -1,3 +1,35 @@
-.container{
-    background-image: url(/resources/assets/coche-fondo.jpg);
+/* .container{
+    background-image: url(/POO_AngelS/resources/assets/coches-mas-anchos.avif);
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 150%;
+    margin: 0;
+ 
+} */
+
+.pie{
+    position: absolute; 
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    border: 2px solid yellow;
+    background-color: black;
 }
+
+p{
+    color: white;
+}
+
+.cabeza{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    border: 2px solid yellow;
+    background-color: black;
+}
+
+
+
+
+

@@ -5,7 +5,9 @@ class Coche{
         private string $name,
         private string $typeDrive,
         private string $fuel,
-        private int $id
+        private int $id, 
+        private bool $available,
+        private string $image
     ){}
     
 
@@ -90,4 +92,50 @@ class Coche{
         }
 
     
+
+        /**
+         * Get the value of available
+         */ 
+        public function getAvailable()
+        {
+                return $this->available;
+        }
+
+        /**
+         * Set the value of available
+         *
+         * @return  self
+         */ 
+        public function setAvailable($available)
+        {
+                $this->available = $available;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of image
+         */ 
+        public function getImage()
+        {
+                return $this->image;
+        }
+
+        /**
+         * Set the value of image
+         *
+         * @return  self
+         */ 
+        public function setImage($image)
+        {
+                $this->image = $image;
+
+                return $this;
+        }
+
+        public function showCard(){
+                $ret = "Nombre: " . $this-> name . " Tipo de Conducción: " . $this -> typeDrive . " Combustible: " . $this -> fuel . " ID: " . $this -> id . " Disponible: " . $this -> available . " Imagen: " . $this -> image;
+
+                return $ret;
+        }
 }
