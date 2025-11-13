@@ -1,111 +1,111 @@
 <?php
 abstract class Users{
     public function __construct(
-        protected array $names,
-        protected array $surnames,
-        protected array $dnis,
-        protected array $carnets,
-        protected array $nicksName,
-        protected array $password,
-        protected array $emails
+        protected string $name,
+        protected string $surname,
+        protected int $dni,
+        protected bool $carnet,
+        protected string $nickName,
+        protected string $password,
+        protected string $email
     ){}
 
         /**
-         * Get the value of names
+         * Get the value of name
          */ 
-        public function getNames()
+        public function getName()
         {
-                return $this->names;
+                return $this->name;
         }
 
         /**
-         * Set the value of names
+         * Set the value of name
          *
          * @return  self
          */ 
-        public function setNames($names)
+        public function setName($name)
         {
-                $this->names = $names;
+                $this->name = $name;
 
                 return $this;
         }
 
         /**
-         * Get the value of surnames
+         * Get the value of surname
          */ 
-        public function getSurnames()
+        public function getSurname()
         {
-                return $this->surnames;
+                return $this->surname;
         }
 
         /**
-         * Set the value of surnames
+         * Set the value of surname
          *
          * @return  self
          */ 
-        public function setSurnames($surnames)
+        public function setSurname($surname)
         {
-                $this->surnames = $surnames;
+                $this->surname = $surname;
 
                 return $this;
         }
 
         /**
-         * Get the value of dnis
+         * Get the value of dni
          */ 
-        public function getDnis()
+        public function getDni()
         {
-                return $this->dnis;
+                return $this->dni;
         }
 
         /**
-         * Set the value of dnis
+         * Set the value of dni
          *
          * @return  self
          */ 
-        public function setDnis($dnis)
+        public function setDni($dni)
         {
-                $this->dnis = $dnis;
+                $this->dni = $dni;
 
                 return $this;
         }
 
         /**
-         * Get the value of carnets
+         * Get the value of carnet
          */ 
-        public function getCarnets()
+        public function getCarnet()
         {
-                return $this->carnets;
+                return $this->carnet;
         }
 
         /**
-         * Set the value of carnets
+         * Set the value of carnet
          *
          * @return  self
          */ 
-        public function setCarnets($carnets)
+        public function setCarnet($carnet)
         {
-                $this->carnets = $carnets;
+                $this->carnet = $carnet;
 
                 return $this;
         }
 
         /**
-         * Get the value of nicksName
+         * Get the value of nickName
          */ 
-        public function getNicksName()
+        public function getNickName()
         {
-                return $this->nicksName;
+                return $this->nickName;
         }
 
         /**
-         * Set the value of nicksName
+         * Set the value of nickName
          *
          * @return  self
          */ 
-        public function setNicksName($nicksName)
+        public function setNickName($nickName)
         {
-                $this->nicksName = $nicksName;
+                $this->nickName = $nickName;
 
                 return $this;
         }
@@ -131,33 +131,35 @@ abstract class Users{
         }
 
         /**
-         * Get the value of emails
+         * Get the value of email
          */ 
-        public function getEmails()
+        public function getEmail()
         {
-                return $this->emails;
+                return $this->email;
         }
 
         /**
-         * Set the value of emails
+         * Set the value of email
          *
          * @return  self
          */ 
-        public function setEmails($emails)
+        public function setEmail($email)
         {
-                $this->emails = $emails;
+                $this->email = $email;
 
                 return $this;
         }
 
-    public function addUser($newNickName, $newPass, $newEmail, $newName, $newSurname, $newDni, $newCarnet){
-        array_push($this->nicksName, $newNickName);
-        array_push($this->password, $newPass);
-        array_push($this->emails, $newEmail);
-        array_push($this->names, $newName);
-        array_push($this->surnames, $newSurname);
-        array_push($this->dnis, $newDni);
-        array_push($this->carnets, $newCarnet); 
-    }
+        public function __tostring(){
+                $ret = "Nombre: " . $this -> name . " Apellido: " . $this -> surname . " DNI: " . $this -> dni . " Carnet: ";
+                if (!$this -> carnet){
+                        $ret .= "No tiene ";
+                } else {
+                        $ret .= "Si tiene ";
+                }
+                $ret .= " NickName: " . $this -> nickName . " PassWord: " . $this -> password . " Email: " . $this -> email;
+
+                return $ret;
+        }
 }
 
