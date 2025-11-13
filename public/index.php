@@ -29,6 +29,7 @@
             include_once __DIR__ . "/../app/models/Login.php"; 
             include_once __DIR__ . "/../app/models/Database.php";
             include_once __DIR__ . "/../app/models/Users.php";
+            include_once __DIR__ . "/../app/models/Car.php";
             $user1 = new Register("Angel", "Salgado", 12345678, true, "Ejemplo", "ContraseñaEjemplo", "ejemplo@gmail.com");
 
             $user1->registerUser();
@@ -102,12 +103,26 @@
         </p>
     </div>
     <div class="caja5">
+        <h3><u> Clase Car (pequeña demostración) </u></h3>
+        <p> Aquí hago uso de dos metodos (addCar y showCard) donde addCar es para añadir un coche a la base de datos y showCard es para mostrar la información del coche.</p>
+        <?php
+            $car1 = new Car("Toyota Corolla", "Automática", "Gasolina", 123456, true, "/POO_AngelS/resources/assets/cocheToyota.webp");
+            Database::addCar($car1);
+            echo $car1 -> showCard();
+        ?>
+        <hr>
+    </div>
+    <div class="caja6">
         <b> Puntos importantes que creo que merecen una aclaración </b>
         La clase Database simula una base de datos usando un array estático para almacenar los usuarios.
-        Todo el tema de ser array estatico fue hecho con ayuda de IA ya que no tenia idea de como simular una base de datos así y la decición de hacerlo también esta impulsada por poder hacer ejemplos con los otros metodos. 
+        Todo el tema de ser array estatico fue hecho con ayuda de IA ya que no tenia idea de como simular una base de datos así y la decición de hacerlo también esta impulsada por poder hacer ejemplos con los otros metodos. <br><br>
 
         También una explicación rapida de unas parte de los metodos como findUserByEmail y findUserByNickName y es que en el bucle foreach se hace uso de self::$users (cosa que no hemos dado en clase y por la cual pienso que merece una explicación) y es que self hace referencia a la propia clase (en este caso Database) y se usa para acceder a propiedades o métodos estáticos de la propia clase ya que son estáticos y no se pueden acceder mediante $this, y en los casos de self::$users es para acceder al array estático que simula la base de datos de los usuarios, 
-        al igual que en los otros metodos por ejemplo self::verifyLogin o self::findUserByNickname que es para llamar a estos metodos ya que son estáticos.
+        al igual que en los otros metodos por ejemplo self::verifyLogin o self::findUserByNickname que es para llamar a estos metodos ya que son estáticos.<br><br>
+
+        Otra cosa importante creo que son las rutas ya que hago uso de __DIR__ ya que aquí si que necesite ayuda de IA ya que estaba teniendo muchos problemas con las rutas y no podía avanzar en el proyecto. <br><br>
+
+        En caso de tener un sugerencia, consejo, duda o objeción sobre cualquier cosa del proyecto, por favor hazmela saber, ya que me serviría mucho aun si fallo en algo, y gracias por ver el proyecto :)<br><br>
     </div>
     <footer class="pie"><p> "Una conducción segura, es una conducción bien recibida" </p></footer>
 </body>

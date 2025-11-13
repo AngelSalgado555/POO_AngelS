@@ -1,9 +1,14 @@
 <?php
 class Database {
     private static array $users = [];
+    private static array $cars = [];
 
     public static function addUser(Users $user): void {
         self::$users[] = $user;
+    }
+
+    public static function addCar(Car $car): void {
+        self::$cars[] = $car;
     }
 
     public static function getUsers(): array {

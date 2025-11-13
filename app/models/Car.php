@@ -1,6 +1,6 @@
 <?php
-
-class Coche{
+include_once __DIR__ . "/Database.php";
+class Car{
     public function __construct(
         private string $name,
         private string $typeDrive,
@@ -10,6 +10,21 @@ class Coche{
         private string $image
     ){}
     
+        public function showCard(){
+                $ret = "<b>Nombre:</b> " . $this-> name . "<br><b> Tipo de Conducción:</b> " . $this -> typeDrive . 
+                "<br><b> Combustible:</b> " . 
+                $this -> fuel . "<br><b> ID:</b> " . $this -> id . "<br><b> Disponible:</b> ";
+                if (!$this -> available){
+                        $ret .= " No esta disponible";
+                } else {
+                        $ret .= " Si esta disponible";
+                }
+
+                $ret .= "<br><b> Imagen:</b> " . $this -> image;
+
+                return $ret;
+        }
+
 
         /**
          * Get the value of name
@@ -133,10 +148,5 @@ class Coche{
                 return $this;
         }
 
-        public function showCard(){
-                $ret = "Nombre: " . $this-> name . " Tipo de Conducción: " . $this -> typeDrive . " Combustible: " . 
-                $this -> fuel . " ID: " . $this -> id . " Disponible: " . $this -> available . " Imagen: " . $this -> image;
-
-                return $ret;
-        }
+        
 }
