@@ -7,19 +7,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="cabeza"><p> Bienvenido RentoGo, tu página de renting confiable </p></header>
-    <br>
-    <br>
-    <nav>
-        <ul> 
-            <li><a href="#">Registrarse</a></li>
-            <li><a href="#">Log in</a></li>
-            <li><a href="#">Coches en stock</a></li>
-            <li><a href="#">Log out</a></li>
-        </ul>
-    </nav>
+    <?php
+        include_once $_SERVER['DOCUMENT_ROOT'] . "/resources/views/layouts/header.php";
+    ?>
 
-    <div class="caja1">
+    <div class="caja">
         <h3><u> Probando el metodo registerUser de la clase Register </u></h3>
         <p> También demuestro el uso del metodo __tostring de Users (Ver las siguientes lineas de código para confirmar) </p>
         <b>Explicación del metodo</b>
@@ -36,7 +28,7 @@
             echo $user1 -> __tostring();
         ?> 
     </div>
-    <div class="caja2">
+    <div class="caja">
         <h3><u> Probando el metodo login de la clase Login </u></h3>
         <b> Explicación del metodo </b>
         <p> El metodo login lo que hace es llamar al metodo verifyLogin de la clase Database y lo que hace es ver si los parametros pasados coinciden con algun usuario de la "base de datos" y en caso de que sea así entonces devuelve un mensaje de "Inicio de sesión exitoso" junto con un booleano true (para usar en el futuro para llevar un registro de inicios de sesión) y en caso contrario devuelve un mensaje de "No se pudo iniciar sesión" junto con un booleano false</p>
@@ -45,7 +37,7 @@
             $login->login("Ejemplo", "ContraseñaEjemplo");
         ?>
     </div>
-    <div class="caja3">
+    <div class="caja">
         <h3><u> Probando el metodo getUsers de la clase Database </u></h3>
         <b> Explicación del metodo getUsers </b>
         <p> Lo que hace este metodo es devolver todos los usuarios de la "base de datos" y en este apartado lo que he hecho es recorrer todos esos usuarios para que se pudiese apreciar que si devulve todos </p>
@@ -58,7 +50,7 @@
             }
         ?> 
     </div>
-    <div class="caja4">
+    <div class="caja">
         <h3><u> Demás metodos (explicación de porque no van separados)</u></h3>
         <p> Los demas metodos como findUserByEmail, findUserByNick, verifyLogin van implementado en el metodo registerUser, por lo que haré sera copiar el código aquí y explicarlos: <br>
 
@@ -102,7 +94,7 @@
         Este metodo lo que hace es buscar en la "base de datos" si existe un usuario que tenga ese nickName o email (lo hice con ambos parametros pensado a futuro y en un caso realista) y que la contraseña pasada conincidan y en el caso de ser así devuelve true junto con el mesaje de Inicio de sesión exitoso, y sino devuelve false junto con el mensaje de No se pudo iniciar sesión. <hr>
         </p>
     </div>
-    <div class="caja5">
+    <div class="caja">
         <h3><u> Clase Car (pequeña demostración) </u></h3>
         <p> Aquí hago uso de dos metodos (addCar y showCard) donde addCar es para añadir un coche a la base de datos y showCard es para mostrar la información del coche.</p>
         <?php
@@ -112,7 +104,7 @@
         ?>
         <hr>
     </div>
-    <div class="caja6">
+    <div class="caja">
         <b> Puntos importantes que creo que merecen una aclaración </b>
         La clase Database simula una base de datos usando un array estático para almacenar los usuarios.
         Todo el tema de ser array estatico fue hecho con ayuda de IA ya que no tenia idea de como simular una base de datos así y la decición de hacerlo también esta impulsada por poder hacer ejemplos con los otros metodos. <br><br>
@@ -124,6 +116,8 @@
 
         En caso de tener un sugerencia, consejo, duda o objeción sobre cualquier cosa del proyecto, por favor hazmela saber, ya que me serviría mucho aun si fallo en algo, y gracias por ver el proyecto :)<br><br>
     </div>
-    <footer class="pie"><p> "Una conducción segura, es una conducción bien recibida" </p></footer>
+    <?php
+        include_once $_SERVER['DOCUMENT_ROOT'] . "/resources/views/layouts/footer.php";
+    ?>
 </body>
 </html>

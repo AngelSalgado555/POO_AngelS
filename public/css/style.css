@@ -1,11 +1,11 @@
-/* .container{
+/* /* .container{
     background-image: url(/POO_AngelS/resources/assets/coches-mas-anchos.avif);
     background-repeat: no-repeat;
     height: 100vh;
     width: 150%;
     margin: 0;
  
-} */
+}
 body{
     margin: 0;
     
@@ -34,8 +34,37 @@ body{
     border: 2px solid yellow;
     background-color: black;
 }
+*/
 
+/* Aquí el css que llevara el header, footer y demás */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
+.caja{
+    margin: 100px 0px;
+    padding: 20px;
+}
+
+header{
+    background: linear-gradient(to right, pink, red, orange);
+    border: 2px solid black;
+    width: 100vw;
+    justify-items: center;
+    position: fixed;
+    top:0;  
+}
+
+footer{
+    background: linear-gradient(to left, pink, red, orange);
+    border: 2px solid black;
+    width: 100vw;
+    justify-items: center;
+    position: fixed;
+    bottom: 0;
+}
 
 
 
