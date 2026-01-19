@@ -1,13 +1,13 @@
 <?php
-abstract class Users{
+class Users{
     public function __construct(
         protected string $name,
         protected string $surname,
-        protected int $dni,
+        protected string $dni,
         protected bool $carnet,
-        protected string $nickName,
         protected string $password,
-        protected string $email
+        protected string $email, 
+        protected int $id = -1
     ){}
 
 
@@ -18,7 +18,7 @@ abstract class Users{
                 } else {
                         $ret .= "Si tiene ";
                 }
-                $ret .= "<br><b>NickName:</b> " . $this -> nickName . "<br><b>PassWord:</b> " . $this -> password . "<br><b>Email:</b> " . $this -> email;
+                $ret .= "<b>PassWord:</b> " . $this -> password . "<br><b>Email:</b> " . $this -> email;
 
                 return $ret;
         }
@@ -104,26 +104,6 @@ abstract class Users{
         }
 
         /**
-         * Get the value of nickName
-         */ 
-        public function getNickName()
-        {
-                return $this->nickName;
-        }
-
-        /**
-         * Set the value of nickName
-         *
-         * @return  self
-         */ 
-        public function setNickName($nickName)
-        {
-                $this->nickName = $nickName;
-
-                return $this;
-        }
-
-        /**
          * Get the value of password
          */ 
         public function getPassword()
@@ -159,6 +139,26 @@ abstract class Users{
         public function setEmail($email)
         {
                 $this->email = $email;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of id
+         */ 
+        public function getId()
+        {
+                return $this->id;
+        }
+
+        /**
+         * Set the value of id
+         *
+         * @return  self
+         */ 
+        public function setId($id)
+        {
+                $this->id = $id;
 
                 return $this;
         }

@@ -59,6 +59,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         // header("Location: index.php");
 
         //Lo guardo en la DB 
-        require_once $_SERVER['DOCUMENT_ROOT'] . "/";
+        require_once $_SERVER['DOCUMENT_ROOT'] . "/app/repositories/UserDAO.php";
+        $u = new Users($name, $surname, $dni, $carnet, $password, $email);
+        if (UserDAO::create($u)){
+            //Aquí lo que queremos que pase cuando no haya error
+            echo "Creado :)";
+            exit();
+        } else{
+            //Aquí lo que quieras que pase cuando hay un error 
+            $errorDB = "No creado, pipipi :,(";
+        }
+        exit();
     }
 }
