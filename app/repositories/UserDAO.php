@@ -65,6 +65,7 @@ class UserDAO{
                 $row["surname"],
                 $row["dni"],
                 $row["carnet"],
+                $row["password"],
                 $row["email"]
             );
         }
