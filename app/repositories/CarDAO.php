@@ -18,6 +18,8 @@ class CarDAO{
         $id = $car -> getId();
         $available = $car -> getAvailable();
 
+        // $ps -> bind_param("sss")
+
         //Condición 
         try{
             //Lanzamiento de consulta: 

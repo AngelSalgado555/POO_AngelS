@@ -18,16 +18,8 @@
             <input type="radio" name="fuel" id="fuel" value="diesel"> Diesel
         </div>
 
-        <!-- <div class="datos"> Aquí iria el id pero eso es una asignación de parte de la base de datos que tiene que estar relacionado con el modelo del coche
-
-        </div> -->
-
-        <!-- <div class="datos"> Aquí iria si la base de datos tiene que esta disponible el coche 
-
-        </div> -->
-
-        <!-- <div class="datos"> Aquí iria una imagen del coche
-
-        </div> -->
+        <div class="datos"> 
+            
+        </div>
     </form>
 </div>
