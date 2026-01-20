@@ -26,6 +26,8 @@ class UserDAO{
         $passHash = password_hash($pass, PASSWORD_DEFAULT); //Contraseña hassheada
         $email = $user -> getEmail(); 
 
+        $ps -> bind_param("sssiss", $name, $surname, $dni, $carnet, $passHash, $email);
+
         //Condición 
         try{
             //Lanzamiento de consulta

@@ -30,7 +30,7 @@
     </div>
     <div class="caja">
         <h3><u> Probando el metodo login de la clase Login </u></h3>
-        <b> Explicación del metodo </b>
+        <b> Explicación del metod	.../indo </b>
         <p> El metodo login lo que hace es llamar al metodo verifyLogin de la clase Database y lo que hace es ver si los parametros pasados coinciden con algun usuario de la "base de datos" y en caso de que sea así entonces devuelve un mensaje de "Inicio de sesión exitoso" junto con un booleano true (para usar en el futuro para llevar un registro de inicios de sesión) y en caso contrario devuelve un mensaje de "No se pudo iniciar sesión" junto con un booleano false</p>
         <?php
             $login = new Login();

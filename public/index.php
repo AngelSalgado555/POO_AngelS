@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,11 +20,7 @@
     <?php
         require_once $_SERVER['DOCUMENT_ROOT'] . "/resources/views/layouts/header.php";
     ?>
-
-    <?php
-        require_once $_SERVER['DOCUMENT_ROOT'] . "/resources/views/components/signup.php";
-    ?>
-
+        <!-- Tengo que hacer el metodo de delete en CarDAO si o si, para borrar un coche -->
     <?php
         require_once $_SERVER['DOCUMENT_ROOT'] . "/resources/views/layouts/footer.php";
     ?>

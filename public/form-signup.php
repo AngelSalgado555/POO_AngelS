@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     $name = secure($_POST["name"]);
     $surname = secure($_POST["surname"]);
     $dni = secure($_POST["dni"]);
-    $carnet = $_POST["carnet"];
+    $carnet = (bool) $_POST["carnet"];
     $password = secure($_POST["password"]);
     $password2 = secure($_POST["confirm-password"]);
     $email = secure($_POST["email"]);
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         $_SESSION["carnet"] = $carnet;
         //Las contraseñas no las pasamos
         $_SESSION["email"] = $email;
-        // header("Location: index.php");
+        header("Location: index.php");
 
         //Lo guardo en la DB 
         require_once $_SERVER['DOCUMENT_ROOT'] . "/app/repositories/UserDAO.php";
@@ -72,3 +72,34 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         exit();
     }
 }
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> RentoGo </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .container{
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <?php
+        require_once $_SERVER['DOCUMENT_ROOT'] . "/resources/views/layouts/header.php";
+    ?>
+
+    <?php
+        require_once $_SERVER['DOCUMENT_ROOT'] . "/resources/views/components/signup.php";
+    ?>
+
+    <?php
+        require_once $_SERVER['DOCUMENT_ROOT'] . "/resources/views/layouts/footer.php";
+    ?>
+</body>
+</html>

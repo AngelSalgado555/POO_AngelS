@@ -29,11 +29,11 @@
                         <div class="form-group mb-3">
                             <label class="form-label d-block">¿Tienes carnet de conducir?</label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="carnet_si" name="carnet" value="si">
+                                <input class="form-check-input" type="radio" id="carnet_si" name="carnet" value="1">
                                 <label class="form-check-label" for="carnet_si">Sí</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="carnet_no" name="carnet" value="no">
+                                <input class="form-check-input" type="radio" id="carnet_no" name="carnet" value="0">
                                 <label class="form-check-label" for="carnet_no">No</label>
                             </div>
                         </div>
