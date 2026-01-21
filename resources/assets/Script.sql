@@ -17,3 +17,10 @@ CREATE TABLE IF NOT EXISTS cars.cars(
 	available boolean
 );
 
+ALTER TABLE cars 
+RENAME COLUMN name TO brand;
+
+ALTER TABLE cars 
+ADD COLUMN model varchar(50) AFTER available,
+ADD COLUMN year int(4) AFTER model, 
+ADD COLUMN price DOUBLE AFTER year;

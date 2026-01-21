@@ -2,16 +2,19 @@
 include_once __DIR__ . "/Database.php";
 class Car{
     public function __construct(
-        private string $name,
+        private string $brand,
         private string $typeDrive,
         private string $fuel,
         private int $id, 
         private bool $available,
-        private string $image
+        private string $model,
+        private int $year, 
+        private float $price, 
+
     ){}
     
         public function showCard(){
-                $ret = "<b>Nombre:</b> " . $this-> name . "<br><b> Tipo de Conducción:</b> " . $this -> typeDrive . 
+                $ret = "<b>Nombre:</b> " . $this-> brand . "<br><b> Tipo de Conducción:</b> " . $this -> typeDrive . 
                 "<br><b> Combustible:</b> " . 
                 $this -> fuel . "<br><b> ID:</b> " . $this -> id . "<br><b> Disponible:</b> ";
                 if (!$this -> available){
@@ -20,30 +23,9 @@ class Car{
                         $ret .= " Si esta disponible";
                 }
 
-                $ret .= "<br><b> Imagen:</b> " . $this -> image;
+                $ret .= "<br><b> Imagen:</b> " . $this -> model;
 
                 return $ret;
-        }
-
-
-        /**
-         * Get the value of name
-         */ 
-        public function getName()
-        {
-                return $this->name;
-        }
-
-        /**
-         * Set the value of name
-         *
-         * @return  self
-         */ 
-        public function setName($name)
-        {
-                $this->name = $name;
-
-                return $this;
         }
 
         /**
@@ -129,24 +111,82 @@ class Car{
         }
 
         /**
-         * Get the value of image
+         * Get the value of model
          */ 
-        public function getImage()
+        public function getModel()
         {
-                return $this->image;
+                return $this->model;
         }
 
         /**
-         * Set the value of image
+         * Set the value of model
          *
          * @return  self
          */ 
-        public function setImage($image)
+        public function setModel($model)
         {
-                $this->image = $image;
+                $this->model = $model;
 
                 return $this;
         }
 
-        
+        /**
+         * Get the value of brand
+         */ 
+        public function getBrand()
+        {
+                return $this->brand;
+        }
+
+        /**
+         * Set the value of brand
+         *
+         * @return  self
+         */ 
+        public function setBrand($brand)
+        {
+                $this->brand = $brand;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of year
+         */ 
+        public function getYear()
+        {
+                return $this->year;
+        }
+
+        /**
+         * Set the value of year
+         *
+         * @return  self
+         */ 
+        public function setYear($year)
+        {
+                $this->year = $year;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of price
+         */ 
+        public function getPrice()
+        {
+                return $this->price;
+        }
+
+        /**
+         * Set the value of price
+         *
+         * @return  self
+         */ 
+        public function setPrice($price)
+        {
+                $this->price = $price;
+
+                return $this;
+        }
 }

@@ -49,14 +49,39 @@ class CarDAO{
         if ($result -> num_rows > 0){
             $row = $result -> fetch_assoc();
             $c = new Car(
-                $row["name"],
+                $row["brand"],
                 $row["typeDrive"],
                 $row["fuel"],
                 $row["id"],
-                $row["available"]
+                $row["available"],
+                $row["model"],
+                $row["year"],
+                $row["price"]
             );
         }
 
         return $c;
+    }
+
+    public static function delete($id){
+        //Conexión
+        $conn = CoreDB::getConnection();
+        $sql = "DELETE FROM cars WHERE $id = ?;";
+        $ps = $conn -> prepare($sql);
+
+        //Bind 
+        $ps -> bind_param("s", $id);
+
+        try{
+            //Lanzamiento de consulta
+            $ps -> execute();
+
+        } catch (Exception $e){
+            $conn -> close();
+            return null; 
+
+        }
+        $conn -> close();
+        return "Se ha eliminado correctamente el coche";
     }
 }
