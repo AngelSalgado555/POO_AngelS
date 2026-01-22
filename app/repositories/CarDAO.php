@@ -8,24 +8,30 @@ class CarDAO{
     public static function create($car) :bool{
         //Conexión 
         $conn = CoreDB::getConnection();
-        $sql = "INSERT INTO cars (name, typeDrive, fuel, id, available) VALUES (?, ?, ?, ?, ?);";
+        $sql = "INSERT INTO cars (brand, drive, fuel, available, model, year, price) VALUES (?, ?, ?, ?, ?, ?, ?);";
         $ps = $conn -> prepare($sql);
 
         //Bind
-        $name = $car -> getName();
-        $typeDrive = $car -> getTypeDrive();
+        $brand = $car -> getBrand();
+        $drive = $car -> getDrive();
         $fuel = $car -> getFuel();
-        $id = $car -> getId();
         $available = $car -> getAvailable();
+        $model = $car -> getModel();
+        $year = $car -> getYear();
+        $price = $car -> getPrice();
 
-        // $ps -> bind_param("sss")
+        $ps -> bind_param("sssisid", $brand, $drive, $fuel, $available, $model, $year, $price);
 
         //Condición 
         try{
             //Lanzamiento de consulta: 
             $ps -> execute();
 
+            //Recupero el ID
+            $id = $ps -> insert_id;
+            $car -> setId($id);
         } catch (Exception $e){
+            var_dump($e -> getMessage());
             $conn -> close();
             return false;
         }
@@ -50,9 +56,8 @@ class CarDAO{
             $row = $result -> fetch_assoc();
             $c = new Car(
                 $row["brand"],
-                $row["typeDrive"],
+                $row["drive"],
                 $row["fuel"],
-                $row["id"],
                 $row["available"],
                 $row["model"],
                 $row["year"],

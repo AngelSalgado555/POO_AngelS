@@ -3,18 +3,19 @@ include_once __DIR__ . "/Database.php";
 class Car{
     public function __construct(
         private string $brand,
-        private string $typeDrive,
+        private string $drive,
         private string $fuel,
-        private int $id, 
         private bool $available,
         private string $model,
         private int $year, 
         private float $price, 
+        private int $id = -1,
+
 
     ){}
     
         public function showCard(){
-                $ret = "<b>Nombre:</b> " . $this-> brand . "<br><b> Tipo de Conducción:</b> " . $this -> typeDrive . 
+                $ret = "<b>Nombre:</b> " . $this-> brand . "<br><b> Tipo de Conducción:</b> " . $this -> drive . 
                 "<br><b> Combustible:</b> " . 
                 $this -> fuel . "<br><b> ID:</b> " . $this -> id . "<br><b> Disponible:</b> ";
                 if (!$this -> available){
@@ -28,25 +29,7 @@ class Car{
                 return $ret;
         }
 
-        /**
-         * Get the value of typeDrive
-         */ 
-        public function getTypeDrive()
-        {
-                return $this->typeDrive;
-        }
 
-        /**
-         * Set the value of typeDrive
-         *
-         * @return  self
-         */ 
-        public function setTypeDrive($typeDrive)
-        {
-                $this->typeDrive = $typeDrive;
-
-                return $this;
-        }
 
         /**
          * Get the value of fuel
@@ -186,6 +169,26 @@ class Car{
         public function setPrice($price)
         {
                 $this->price = $price;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of drive
+         */ 
+        public function getDrive()
+        {
+                return $this->drive;
+        }
+
+        /**
+         * Set the value of drive
+         *
+         * @return  self
+         */ 
+        public function setDrive($drive)
+        {
+                $this->drive = $drive;
 
                 return $this;
         }

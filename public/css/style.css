@@ -104,6 +104,10 @@ input:focus{
     box-shadow: 0 0 0 2px rgba(74, 111, 165, 0.2);
 }
 
+.data-error{
+    border: 2px solid red;
+}
+
 
 
 
