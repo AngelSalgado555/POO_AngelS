@@ -10,17 +10,20 @@ CREATE TABLE IF NOT EXISTS cars.users(
 );
 
 CREATE TABLE IF NOT EXISTS cars.cars( 
-	brand varchar(255), 
-	typeDrive varchar(50),
-	fuel varchar(50), 
-	id int PRIMARY KEY,
-	available boolean
+    id int PRIMARY KEY auto_increment,
+    brand varchar(50),
+    drive varchar(50),
+    fuel varchar(50),
+    available boolean,
+    model varchar(50),
+    year int, 
+    price float
 );
 
-ALTER TABLE cars 
-RENAME COLUMN name TO brand;
+-- ALTER TABLE cars 
+-- RENAME COLUMN name TO brand;
 
-ALTER TABLE cars.cars
-ADD COLUMN model varchar(50) AFTER available,
-ADD COLUMN year int AFTER model, 
-ADD COLUMN price DOUBLE AFTER year;
+-- ALTER TABLE cars.cars
+-- ADD COLUMN model varchar(50) AFTER available,
+-- ADD COLUMN year int AFTER model, 
+-- ADD COLUMN price DOUBLE AFTER year;

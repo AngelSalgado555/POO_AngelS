@@ -47,14 +47,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
 }
 
-
-
-
-
-
-        //Lo guardo en la DB
-
-
             //Aquí lo que queremos que pase cuando no haya error
 
 
