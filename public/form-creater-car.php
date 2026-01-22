@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         $_SESSION["year"] = $year;
         $_SESSION["price"] = $price;
 
-      //  header("Location: index.php");
+       header("Location: index.php");
         
         //Lo guardo en la DB
         require_once $_SERVER['DOCUMENT_ROOT'] . "/app/repositories/CarDAO.php";
@@ -76,8 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         } else {
             //Aquí lo que quieras que pase cuando hay un error 
             $errorDB = "No se creo correctamente";
-            echo "mal";
-            var_dump($c);
         }
         exit();
     }

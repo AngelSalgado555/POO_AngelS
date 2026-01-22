@@ -84,9 +84,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
-        .container{
+        /* .container{
             height: 100vh;
-        }
+        } */
     </style>
 </head>
 <body>

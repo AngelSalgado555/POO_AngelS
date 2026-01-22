@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,16 +7,16 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
-        .container{
+        /* .container{
             height: 100vh;
-        }
+        } */
     </style>
 </head>
 <body>
     <?php
         require_once $_SERVER['DOCUMENT_ROOT'] . "/resources/views/layouts/header.php";
     ?>
-        <!-- Tengo que hacer el metodo de delete en CarDAO si o si, para borrar un coche -->
+        
     <?php
         require_once $_SERVER['DOCUMENT_ROOT'] . "/resources/views/layouts/footer.php";
     ?>

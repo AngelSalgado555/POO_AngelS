@@ -43,7 +43,7 @@ body{
     box-sizing: border-box;
 }
 
-.caja{
+/* .caja{
     margin: 100px 0px;
     padding: 20px;
 }
@@ -102,7 +102,7 @@ input:focus{
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 2px rgba(74, 111, 165, 0.2);
-}
+} */
 
 .data-error{
     border: 2px solid red;
