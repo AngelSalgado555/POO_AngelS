@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         $_SESSION["email"] = $email;
         header("Location: index.php");
 
-        //Lo guardo en la DB 
+        //Lo guardo en la DB
         require_once $_SERVER['DOCUMENT_ROOT'] . "/app/repositories/UserDAO.php";
         $u = new Users($name, $surname, $dni, $carnet, $password, $email);
         if (UserDAO::create($u)){
