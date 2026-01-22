@@ -10,19 +10,28 @@
                         <!-- Nombre -->
                         <div class="form-group mb-3">
                             <label for="name" class="form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Solamente el nombre...">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Solamente el nombre..."
+                                value="<?= $name ?>"
+                                class="<?= empty($nameError) ? "" : "data-error" ?>"
+                            >
                         </div>
 
                         <!-- Apellidos -->
                         <div class="form-group mb-3">
                             <label for="surname" class="form-label">Apellidos:</label>
-                            <input type="text" class="form-control" id="surname" name="surname" placeholder="Ingresa los apellidos..">
+                            <input type="text" class="form-control" id="surname" name="surname" placeholder="Ingresa los apellidos.."
+                                value="<?= $surname ?>"
+                                class="<?= empty($nameError) ? "" : "data-error" ?>"
+                            >
                         </div>
 
                         <!-- DNI -->
                         <div class="form-group mb-3">
                             <label for="dni" class="form-label">DNI:</label>
-                            <input type="text" class="form-control" id="dni" name="dni" placeholder="12345678X">
+                            <input type="text" class="form-control" id="dni" name="dni" placeholder="12345678X"
+                                value="<?= $dni ?>"
+                                class="<?= empty($nameError) ? "" : "data-error" ?>" requiered
+                            >
                         </div>
 
                         <!-- Carnet de conducir -->
@@ -41,18 +50,31 @@
                         <!-- Contraseñas -->
                         <div class="form-group mb-3">
                             <label for="password" class="form-label">Contraseña:</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Crea tu contraseña">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Crea tu contraseña"
+                                value="<?= $password ?>"
+                                class="<?= empty($passError) ? "" : "data-error" ?>"
+                            >
                         </div>
 
                         <div class="form-group mb-3">
                             <label for="confirm-password" class="form-label">Repite contraseña:</label>
-                            <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Repite tu contraseña por favor">
+                            <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Repite tu contraseña por favor"
+                                value="<?= $password2 ?>"
+                                class="<?= empty($passError) ? "" : "data-error" ?>"
+                            >
+                            <?php if ($password == $password2){
+                                $passError = "Las contraseñas no coinciden.";
+                            } ?>
+                    
                         </div>
 
                         <!-- Email -->
                         <div class="form-group mb-4">
                             <label for="email" class="form-label">Email:</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu email por favor">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu email por favor"
+                                value="<?= $email ?>"
+                                class="<?= empty($emailError) ? "" : "data-error" ?>"
+                            >
                         </div>
 
                         <!-- Botón de submit -->

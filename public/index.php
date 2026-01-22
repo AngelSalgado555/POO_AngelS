@@ -16,7 +16,9 @@
     <?php
         require_once $_SERVER['DOCUMENT_ROOT'] . "/resources/views/layouts/header.php";
     ?>
-        
+
+    <h1> Este deberia ser el Home </h1>
+
     <?php
         require_once $_SERVER['DOCUMENT_ROOT'] . "/resources/views/layouts/footer.php";
     ?>

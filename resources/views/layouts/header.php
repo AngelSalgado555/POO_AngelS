@@ -1,4 +1,46 @@
 <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm px-4">
+        <a class="navbar-brand fw-bold" href="#">Mi página web</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto gap-2">
+                <li class="nav-item">
+                    <a class="btn btn-light" href="/public\index.php">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-primary" href="/public/form-login.php">
+                        Login
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-success" href="/public/form-signup.php">
+                        Sign Up
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-primary" href="/public/form-creater-car.php">
+                        Insert Car
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-danger" href="/public\closesesion.php">
+                        Cerrar Sesión
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+
+<!-- <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
         <a class="navbar-brand" href="#">Mi página web</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -19,7 +61,7 @@
             </ul>
         </div>
     </nav>
-</header>
+</header> -->
 
 <!-- <header>
     <h1> Esto es mi página web </h1>
