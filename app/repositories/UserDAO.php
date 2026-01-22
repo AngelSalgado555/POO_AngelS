@@ -83,4 +83,26 @@ class UserDAO{
     //     $conn -> close();
 
     // }
+
+    public static function readByEmail($email){
+        //Conexión 
+        $conn = CoreDB::getConnection();
+        $sql = "SELECT * FROM users WHERE $email = ?;";
+        $ps = $conn -> prepare($sql);
+
+        //Bind
+        $ps -> bind_param("s", $email); 
+
+        //Condición 
+        try{
+            //Lanzamiento de consulta
+            $ps -> execute();
+            
+        } catch (Exception $e){
+            $conn -> close(); 
+            return false;
+        }
+        $conn -> close(); 
+        return true; 
+    }
 }

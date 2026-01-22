@@ -30,29 +30,24 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         $passError = "Introduce la contraseña por favor ";
     }
 
-    //Falta ver si la contraseña y el email son correctos 
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/app/repositories/UserDAO.php";
+    if (UserDAO::readByEmail($email)){
+        //3. Si todo va bien, me voy al index (sesión)
+        if (!$errors){
+            //Hago la cookie para seguir logueado
+            if (isset($_POST["stay-connected"])){
+                setcookie("stay-connected", $email, time() + 60*60, "/");
+            }
 
-    //3. Si todo va bien, me voy al index (sesión)
-    if (!$errors){
-        //Hago la cookie para seguir logueado
-        if (isset($_POST["stay-connected"])){
-            setcookie("stay-connected", $email, time() + 60*60, "/");
+            unset($_SESSION["error"]);
+            $_SESSION["correo-login"] = $email;
+            $_SESSION["origin"] = "login";
+            header("Location: index.php");
         }
-
-        unset($_SESSION["error"]);
-        $_SESSION["correo-login"] = $email;
-        $_SESSION["origin"] = "login";
-        header("Location: index.php");
+    } else {
+        $emailError = "El correo no coincide.";
     }
-
 }
-
-            //Aquí lo que queremos que pase cuando no haya error
-
-
-            //Aquí lo que quieras que pase cuando hay un error 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Formulario de Login </title>
-    <link rel="stylesheet" href="css/styel.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>

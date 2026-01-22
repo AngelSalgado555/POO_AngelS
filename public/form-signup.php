@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         $_SESSION["carnet"] = $carnet;
         //Las contraseñas no las pasamos
         $_SESSION["email"] = $email;
-        header("Location: index.php");
+        // header("Location: index.php");
 
         //Lo guardo en la DB
         require_once $_SERVER['DOCUMENT_ROOT'] . "/app/repositories/UserDAO.php";
